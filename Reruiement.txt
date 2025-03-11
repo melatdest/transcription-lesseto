@@ -1,0 +1,14 @@
+SpeechRecognition
+openai-whisper
+vosk
+deepspeech
+librosa
+pydub
+nltk
+spacy
+fastapi
+uvicorn
+numpy
+pandas
+torch
+torchaudio
