@@ -1,120 +1,84 @@
-# transcription-lesseto
+
 ## Transcription-Lesotho
 
-# Overview
 
-Transcription-Lesotho is a project focused on processing and analyzing audio data from Lesotho. The goal is to develop a structured approach for handling, cleaning, and utilizing transcription data for linguistic and AI applications.
 
-# Data Structure
+# Speech Project
 
-The dataset consists of the following components:
+## 📌 Project Overview
+This project focuses on the transcription component of a code-switched isiZulu dataset. The goal is to analyze and benchmark speech-to-text models for better performance in real-world applications.
 
-Audio Files: Stored in audio/ directory in .wav format.
+## 📂 Folder Structure
+```
+speech_project/
+│── data/
+│   ├── recordings/       # Audio files
+│   ├── transcriptions.csv  # Transcription dataset
+│── src/
+│   ├── eda.py             # EDA script
+│   ├── utils.py           # Utility functions
+│── notebooks/
+│   ├── eda.ipynb          # Optional Jupyter notebook for visualization
+│── requirements.txt        # Dependencies
+│── Dockerfile              # Docker setup
+│── README.md               # Instructions
+```
 
-Transcriptions: Corresponding text files in transcripts/ directory with .txt format.
+## 🚀 Getting Started
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/melatdest/transcription-lesseto.git
+cd speech_project
+```
 
-Metadata: CSV file (metadata.csv) containing details such as speaker ID, duration, and language labels.
+### 2️⃣ Set Up the Environment
+It is recommended to use a virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate   # On macOS/Linux
+venv\Scripts\activate     # On Windows
+```
 
-Annotations: If applicable, labeled dataset in annotations/ for linguistic processing.
+### 3️⃣ Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
-Metadata Schema:
+### 4️⃣ Run Exploratory Data Analysis (EDA)
+```bash
+python src/eda.py
+```
 
-Column Name
+### 5️⃣ Run in Jupyter Notebook (Optional)
+```bash
+jupyter notebook notebooks/eda.ipynb
+```
 
-Description
+## 🛠 Model Benchmarking
+This project benchmarks **Whisper-Small** and **Wav2Vec2** for speech-to-text performance. The key evaluation metrics are:
+- **Character Error Rate (CER)**
+- **Word Error Rate (WER)**
+- **Other relevant performance metrics**
 
-file_name
+## 🔍 Error Analysis
+For the best-performing model, an in-depth error analysis is performed, including:
+- **Visualization techniques**
+- **Explainability tools**
+- **Human-in-the-loop evaluation**
 
-Name of the audio file
+## 📝 Recommendations
+Based on findings from EDA and error analysis, suggestions for model improvement will be provided.
 
-speaker_id
+## 📦 Running with Docker (Optional)
+You can run this project inside a Docker container:
+```bash
+docker build -t speech_project .
+docker run -it speech_project
+```
 
-Unique identifier for the speaker
+## 👥 Contributors
+- **Melat Desta** 
 
-duration
-
-Duration of the audio file in seconds
-
-transcript
-
-Corresponding transcript of the audio
-
-language
-
-Language or dialect used in the audio
-
-quality
-
-Quality assessment score of the transcription
-
-# Methodology
-
-1. Data Collection
-
-Audio data is collected from various sources, including interviews, radio broadcasts, and spontaneous speech recordings.
-
-Each audio file is paired with a manually verified transcription.
-
-2. Preprocessing
-
-Convert all audio files to a uniform format (16kHz, mono, .wav).
-
-Normalize transcriptions (lowercase conversion, punctuation removal if necessary).
-
-Align audio files with their transcriptions.
-
-3. Data Cleaning
-
-To ensure data quality, we perform:
-
-Noise Removal: Filtering out background noise.
-
-Silence Trimming: Removing long pauses at the beginning or end of recordings.
-
-Spelling Correction: Using NLP-based spell-checking tools.
-
-Speaker Normalization: Ensuring consistent speaker labeling across datasets.
-
-Duplicate Removal: Identifying and eliminating duplicate records.
-
-4. Post-Processing
-
-Tokenization and text normalization for NLP tasks.
-
-Data splitting into train, validation, and test sets.
-
-Formatting for use in speech recognition models (e.g., Kaldi, ESPnet, Whisper).
-
-How to Clean the Data
-
-Follow these steps to clean the dataset:
-
-# Install Dependencies:
-
-pip install pandas numpy librosa
-
-Run the Cleaning Script:
-
-python clean_data.py
-
-The script will:
-
-Remove background noise.
-
-Trim silence from audio files.
-
-Normalize text transcriptions.
-
-Validate Data Integrity:
-
-python validate_data.py
-
-This ensures all audio files have corresponding transcriptions and metadata is correctly structured.
-
-# Contribution
-
-Feel free to contribute by submitting pull requests, reporting issues, or adding new features to the cleaning pipeline.
-
-License
-
+## 📜 License
 This project is licensed under the MIT License.
+
