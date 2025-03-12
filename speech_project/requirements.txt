@@ -11,4 +11,3 @@ jupyter
 ffmpeg
 torchaudio
 openai-whisper
-
